@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.cs3200moviemania"
+        applicationId "com.navigation_example"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

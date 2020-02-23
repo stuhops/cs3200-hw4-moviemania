@@ -1,4 +1,4 @@
-package com.cs3200moviemania;
+package com.navigation_example;
 
 import android.app.Application;
 import android.content.Context;

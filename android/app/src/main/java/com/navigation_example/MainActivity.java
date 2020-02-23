@@ -1,4 +1,4 @@
-package com.cs3200moviemania;
+package com.navigation_example;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "cs3200Moviemania";
+    return "navigation_example";
   }
 }

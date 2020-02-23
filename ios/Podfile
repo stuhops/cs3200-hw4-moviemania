@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'cs3200Moviemania' do
-  # Pods for cs3200Moviemania
+target 'navigation_example' do
+  # Pods for navigation_example
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,7 +34,7 @@ target 'cs3200Moviemania' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'cs3200MoviemaniaTests' do
+  target 'navigation_exampleTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +42,10 @@ target 'cs3200Moviemania' do
   use_native_modules!
 end
 
-target 'cs3200Moviemania-tvOS' do
-  # Pods for cs3200Moviemania-tvOS
+target 'navigation_example-tvOS' do
+  # Pods for navigation_example-tvOS
 
-  target 'cs3200Moviemania-tvOSTests' do
+  target 'navigation_example-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
