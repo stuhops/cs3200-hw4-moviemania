@@ -12,11 +12,11 @@ export default class GenreListItem extends React.Component {
   })
 
   render() {
-    const { onPress, genre } = this.props;
+    const { onPress, movie } = this.props;
     return (
       <TouchableOpacity onPress={ onPress }>
         <View style={this.styles.listItem}>
-          <Text style={this.styles.movieTitle}>{ genre.item.name }</Text>
+          <Text style={this.styles.movieTitle}>{ movie.index }. { movie.item.title }</Text>
         </View>
       </TouchableOpacity>
     );
