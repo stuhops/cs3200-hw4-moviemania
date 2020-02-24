@@ -9,7 +9,6 @@ export default class GenreListItem extends React.Component {
     },
     movieInfo: {
       fontSize: 16,
-      height: 97,
     },
     movieTitle: {
       fontWeight: 'bold',
@@ -28,7 +27,7 @@ export default class GenreListItem extends React.Component {
           <Col size={2}>
             <View>
               <Image 
-                source={{uri: `https://image.tmdb.org/t/p/w500${movie.item.poster_path}`}}
+                source={{uri: `https://image.tmdb.org/t/p/w200${movie.item.poster_path}`}}
                 style={this.styles.imgThumbnail}
               />
             </View>
