@@ -7,35 +7,45 @@ export default class GenreListItem extends React.Component {
     listItem: {
       padding: 24,
     },
+    movieInfo: {
+      fontSize: 16,
+      height: 97,
+    },
     movieTitle: {
-      fontSize: 24,
+      fontWeight: 'bold',
     },
     imgThumbnail: {
-      marginHorizontal: 10,
       height: 100,
       width: 100,
     }
   })
-
-  async componentDidMount() {
-
-    console.log(`\n\n\n ${this.props.movie.item.poster_path} \n\n\n`);
-  }
 
   render() {
     const { onPress, movie } = this.props;
     return (
       <TouchableOpacity style={this.styles.listItem} onPress={ onPress }>
         <Row>
-          <View >
-            <Image 
-              source={{uri: `https://image.tmdb.org/t/p/w500${movie.item.poster_path}`}}
-              style={this.styles.imgThumbnail}
-            />
-          </View>
-          <View >
-            <Text style={this.styles.movieTitle}>{ movie.index }. { movie.item.title }</Text>
-          </View>
+          <Col size={2}>
+            <View>
+              <Image 
+                source={{uri: `https://image.tmdb.org/t/p/w500${movie.item.poster_path}`}}
+                style={this.styles.imgThumbnail}
+              />
+            </View>
+          </Col>
+          <Col size={4}>
+            <View >
+              <Text style={this.styles.movieInfo} numberOfLines={5}>
+                <Text style={this.styles.movieTitle}>{ movie.index }. { movie.item.title }</Text>
+                {'\n'}
+                Released: { movie.item.release_date }
+                {'\n'}
+                Rating: { movie.item.vote_average }
+                {'\n'}
+                { movie.item.overview }
+              </Text>
+            </View>
+          </Col>
         </Row>
       </TouchableOpacity>
     );
