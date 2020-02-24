@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import { SafeAreaView, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { Container, Text, Button } from 'native-base';
 import MoviesService from '../../../services/movies.service';
 import GenreListItem from './genre_list_item';
@@ -26,6 +26,16 @@ export default class Index extends React.Component {
     }
   }
 
+  renderSeparator = () => (
+    <View
+      style={{
+        backgroundColor: 'lightgray',
+        height: 1,
+        opacity: 50,
+      }}
+    />
+  );
+
   render() {
     return (
       <Container>
@@ -37,6 +47,7 @@ export default class Index extends React.Component {
                       onPress={() => this.props.navigation.navigate('Movies By Genre')}
                   />
           }}
+          ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={(movie) => `movie_${movie.id}`}
         />
       </Container>
