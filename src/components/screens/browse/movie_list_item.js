@@ -35,7 +35,7 @@ export default class GenreListItem extends React.Component {
           <Col size={4}>
             <View >
               <Text style={this.styles.movieInfo} numberOfLines={5}>
-                <Text style={this.styles.movieTitle}>{ movie.index }. { movie.item.title }</Text>
+                <Text style={this.styles.movieTitle}>{ movie.item.title }</Text>
                 {'\n'}
                 Released: { movie.item.release_date }
                 {'\n'}
