@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ScrollView } from 'react-native';
+import { FlatList, ScrollView, View } from 'react-native';
 import { Container } from 'native-base';
 import MoviesService from '../../../services/movies.service';
 import MovieListItem from './movie_list_item';
@@ -28,6 +28,16 @@ export default class Index extends React.Component {
     }
   }
 
+   renderSeparator = () => (
+    <View
+      style={{
+        backgroundColor: 'lightgray',
+        height: 1,
+        opacity: 50,
+      }}
+    />
+  );
+
   render() {
     return (
       <Container>
@@ -39,6 +49,7 @@ export default class Index extends React.Component {
                       onPress={() => this.props.navigation.navigate('Movie Info')}
                   />
           }}
+          ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={(movie) => `movie_${movie.id}`}
         />
       </Container>
