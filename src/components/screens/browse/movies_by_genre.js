@@ -46,7 +46,7 @@ export default class Index extends React.Component {
           renderItem={(dataEntry) => {
             return <MovieListItem
                       movie={dataEntry}
-                      onPress={() => this.props.navigation.navigate('Movie Info')}
+                      onPress={() => this.props.navigation.navigate('Movie Info', {movie: dataEntry.item})}
                   />
           }}
           ItemSeparatorComponent={this.renderSeparator}
