@@ -14,9 +14,12 @@ export default class Index extends React.Component {
   
   
   async componentDidMount(){
-    console.log();
-    const movies = await MoviesService.getMoviesByGenre(this.props.route.params.genre.id);
-    this.setState({movies})
+    try {
+      const movies = await MoviesService.getMoviesByGenre(this.props.route.params.genre.id);
+      this.setState({movies});
+    } catch (e) {
+      console.log(e);
+    }
   }
 
 
@@ -31,7 +34,6 @@ export default class Index extends React.Component {
   );
 
   render() {
-    // console.log(this.state.movies)
     return (
       <Container>
         <FlatList
