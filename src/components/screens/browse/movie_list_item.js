@@ -39,7 +39,7 @@ export default class GenreListItem extends React.Component {
                 {'\n'}
                 Released: { movie.item.release_date }
                 {'\n'}
-                Rating: { movie.item.vote_average }
+                Rating: { movie.item.vote_average } / 10
                 {'\n'}
                 { movie.item.overview }
               </Text>
