@@ -16,7 +16,7 @@ export default class Index extends React.Component {
   async componentDidMount(){
     try {
       const movies = await MoviesService.getMoviesByGenre(this.props.route.params.genre.id);
-      this.setState({movies});
+      this.setState({movies, loading: false});
     } catch (e) {
       console.log(e);
     }
@@ -33,6 +33,34 @@ export default class Index extends React.Component {
     />
   );
 
+
+  loadMoreMovies = () => {
+    if (this.state.loading) return;
+    if (this.state.allLoaded) return;
+
+    this.setState(
+      { loading: true },
+      async () => {
+        try {
+          const newMovies = await MoviesService.getMoviesByGenre(this.props.route.params.genre.id, this.state.currentPage + 1);
+          this.setState((state) => {
+            const newState = {...state};
+            newState.movies = [...state.movies, ...newMovies];
+            newState.currentPage = state.currentPage + 1;
+            newState.loading = false;
+            if (newMovies.length === 0) {
+              newState.allLoaded = true;
+            }
+            return newState;
+          });
+        } catch(e) {
+          console.log(e);
+        }
+      }
+    )
+  }
+
+
   render() {
     return (
       <Container>
@@ -44,6 +72,7 @@ export default class Index extends React.Component {
                       onPress={() => this.props.navigation.navigate('Movie Info', {movie: dataEntry.item})}
                   />
           }}
+          onEndReached={this.loadMoreMovies}
           ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={(movie) => `movie_${movie.id}`}
         />
