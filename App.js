@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import HomeNavigator from './src/components/navigators/home';
-import Info from './src/components/screens/info';
+import SearchMovie from './src/components/screens/search/search';
 // const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,7 @@ export default class App extends React.Component {
         <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen name="Browse" component={HomeNavigator} />
-            <Tab.Screen name="Search" component={Info} />
+            <Tab.Screen name="Search" component={SearchMovie} />
           </Tab.Navigator>
         </NavigationContainer>
     );

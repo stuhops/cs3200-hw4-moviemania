@@ -5,8 +5,9 @@ const ROOT_URL = 'https://api.themoviedb.org/3';
 export default class MoviesService {
 
   static async search(searchTerm, pageNumber = 1) {
-    const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}`);
+    const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
     const resJson = await result.json();
+    console.log('search: ', resJson);
     return resJson.results;
   }
 
@@ -32,9 +33,9 @@ export default class MoviesService {
     const creditResult = await fetch(`${ROOT_URL}/movie/${movieId}/credits?${API_KEY}&language=en-US`);
     const creditResJson = await creditResult.json();
 
-    resJson.results += {cast: creditResJson};
+    resJson.cast = creditResJson;
 
-    return resJson.results; 
+    return resJson; 
   }
 
 }
