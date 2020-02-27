@@ -7,7 +7,6 @@ export default class MoviesService {
   static async search(searchTerm, pageNumber = 1) {
     const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
     const resJson = await result.json();
-    console.log('search: ', resJson);
     return resJson.results;
   }
 
@@ -35,6 +34,13 @@ export default class MoviesService {
 
     resJson.cast = creditResJson;
 
+    return resJson; 
+  }
+
+
+  static async getPersonalInfo(personalId) {
+    const result = await fetch(`${ROOT_URL}/person/${personalId}?${API_KEY}&language=en-US`);
+    const resJson = await result.json();
     return resJson; 
   }
 
