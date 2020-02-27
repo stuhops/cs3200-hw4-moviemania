@@ -76,8 +76,7 @@ export default class Index extends React.Component {
         <Item rounded>
           <Input
             placeholder='Search: "Star Wars"'
-            onChangeText={text => search(text)}
-            value={this.state.searchTerm}
+            onChangeText={text => this.search(text)}
          />
         </Item>
         <FlatList
