@@ -94,7 +94,7 @@ export default class Profile extends React.Component {
             <Text>{person.biography}</Text>
           </View>
 
-          <Button full={true} onPress={() => this.props.navigation.navigate('Cast List', {cast: this.state.movie.cast})}>
+          <Button full={true} onPress={() => this.props.navigation.navigate('Movies By Person', {id: person.id})}>
             <Text>View Movie List</Text>
           </Button>
         </ScrollView>
