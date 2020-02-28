@@ -27,7 +27,7 @@ export default class Index extends React.Component {
           renderItem={(dataEntry) => {
             return <CastListItem
                       person={dataEntry.item}
-                      onPress={() => this.props.navigation.navigate('Profile', {person: dataEntry.item})}
+                      onPress={() => this.props.navigation.push('Profile', {person: dataEntry.item})}
                   />
           }}
           ItemSeparatorComponent={this.renderSeparator}

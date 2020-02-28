@@ -99,7 +99,7 @@ export default class HomePage1 extends React.Component {
             <Text style={this.styles.movieStats}>Revenue: ${ this.state.movie.revenue }</Text>
           </View>
 
-          <Button full={true} onPress={() => this.props.navigation.navigate('Cast List', {cast: this.state.movie.cast})}>
+          <Button full={true} onPress={() => this.props.navigation.push('Cast List', {cast: this.state.movie.cast})}>
             <Text>View Cast List</Text>
           </Button>
         </ScrollView>
