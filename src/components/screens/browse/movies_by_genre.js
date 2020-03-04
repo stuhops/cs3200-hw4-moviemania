@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ScrollView, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { Container } from 'native-base';
 import MoviesService from '../../../services/movies.service';
 import MovieListItem from './movie_list_item';

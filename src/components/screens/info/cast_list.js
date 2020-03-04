@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ScrollView, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { Container } from 'native-base';
 import CastListItem from './cast_list_item';
 
@@ -31,7 +31,6 @@ export default class Index extends React.Component {
                   />
           }}
           ItemSeparatorComponent={this.renderSeparator}
-          // keyExtractor={(movie) => `movie_${movie.id}`}
         />
       </Container>
     );

@@ -15,7 +15,6 @@ export default class Index extends React.Component {
   
   async componentDidMount(){
     try {
-      console.log('here');
       const movies = await MoviesService.getMoviesByPerson(this.props.route.params.id);
       this.setState({movies, loading: false});
     } catch (e) {

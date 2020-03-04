@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Row, Grid } from 'react-native-easy-grid';
 import { FlatList, View } from 'react-native';
-import { Container, Text, Button } from 'native-base';
+import { Container, } from 'native-base';
 import MoviesService from '../../../services/movies.service';
 import GenreListItem from './genre_list_item';
 

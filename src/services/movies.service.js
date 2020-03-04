@@ -28,7 +28,6 @@ export default class MoviesService {
   static async getMoviesByPerson(personId) {
     const result = await fetch(`${ROOT_URL}/person/${personId}/movie_credits?${API_KEY}&language=en-US&adult=false`);
     const resJson = await result.json();
-    console.log(resJson.cast)
     return resJson.cast; 
   }
 

@@ -114,7 +114,6 @@ export default class Index extends React.Component {
 
 
   render() {
-    console.log(this.state.searchCategory)
     return (
       <Container>
         <Item rounded style={this.styles.searchBar}>

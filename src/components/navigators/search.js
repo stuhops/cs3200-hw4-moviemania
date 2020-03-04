@@ -1,7 +1,6 @@
 
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Index from '../screens/browse/index';
 import MoviesByGenre from '../screens/browse/movies_by_genre';
 import MovieInfo from '../screens/info/movie_info';
 import CastList from '../screens/info/cast_list';

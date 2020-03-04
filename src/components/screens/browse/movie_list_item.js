@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Container, Row, Col, Text } from 'native-base';
+import { Row, Col, Text } from 'native-base';
 
 export default class GenreListItem extends React.Component {
   styles = StyleSheet.create({

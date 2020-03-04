@@ -10,9 +10,6 @@ export default class Profile extends React.Component {
   }
 
   styles = StyleSheet.create({
-    main: {
-      // backgroundColor: 'dark-gray',
-    },
     imgThumbnail: {
       flex: 1,
       width: 150,
@@ -47,8 +44,7 @@ export default class Profile extends React.Component {
       marginBottom: 24,
       flexDirection: 'row',
     },
-
-  })
+  });
 
 
   async componentDidMount() {
