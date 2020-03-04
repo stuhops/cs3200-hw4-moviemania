@@ -5,14 +5,14 @@ const ROOT_URL = 'https://api.themoviedb.org/3';
 export default class MoviesService {
 
   static async searchMovies(searchTerm, pageNumber = 1) {
-    const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
+    const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}&${API_KEY}&adult=false`);
     const resJson = await result.json();
     return resJson.results;
   }
 
 
   static async searchPeople(searchTerm, pageNumber = 1) {
-    const result = await fetch(`${ROOT_URL}/search/person?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
+    const result = await fetch(`${ROOT_URL}/search/person?query=${searchTerm}&page=${pageNumber}&${API_KEY}&adult=false`);
     const resJson = await result.json();
     return resJson.results;
   }
@@ -26,7 +26,7 @@ export default class MoviesService {
 
 
   static async getMoviesByPerson(personId) {
-    const result = await fetch(`${ROOT_URL}/person/${personId}/movie_credits?${API_KEY}&language=en-US`);
+    const result = await fetch(`${ROOT_URL}/person/${personId}/movie_credits?${API_KEY}&language=en-US&adult=false`);
     const resJson = await result.json();
     console.log(resJson.cast)
     return resJson.cast; 
@@ -34,7 +34,7 @@ export default class MoviesService {
 
 
   static async getMoviesByGenre(genreIds, pageNumber=1) {
-    const result = await fetch(`${ROOT_URL}/discover/movie?with_genres=${genreIds}&page=${pageNumber}&${API_KEY}&language=en-US`);
+    const result = await fetch(`${ROOT_URL}/discover/movie?with_genres=${genreIds}&page=${pageNumber}&${API_KEY}&adult=false&language=en-US`);
     const resJson = await result.json();
     return resJson.results; 
   }
