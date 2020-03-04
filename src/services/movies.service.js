@@ -4,8 +4,15 @@ const ROOT_URL = 'https://api.themoviedb.org/3';
 
 export default class MoviesService {
 
-  static async search(searchTerm, pageNumber = 1) {
+  static async searchMovies(searchTerm, pageNumber = 1) {
     const result = await fetch(`${ROOT_URL}/search/movie?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
+    const resJson = await result.json();
+    return resJson.results;
+  }
+
+
+  static async searchPeople(searchTerm, pageNumber = 1) {
+    const result = await fetch(`${ROOT_URL}/search/person?query=${searchTerm}&page=${pageNumber}&${API_KEY}`);
     const resJson = await result.json();
     return resJson.results;
   }
