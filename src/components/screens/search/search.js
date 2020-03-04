@@ -114,19 +114,20 @@ export default class Index extends React.Component {
 
 
   render() {
+    console.log(this.state.searchCategory)
     return (
       <Container>
         <Item rounded style={this.styles.searchBar}>
           <Input
             placeholder='Search: "Star Wars"'
-            onChangeText={text => this.search(text)}
+            onChangeText={text => this.search(text, this.state.searchCategory)}
          />
         </Item>
         <Row style={this.styles.btnRow}>
-          <Button bordered small success onPress={() => this.search(this.state.searchTerm, 'movies')}>
+          <Button bordered={() => {this.state.searchCategory === 'movies'}} small onPress={() => this.search(this.state.searchTerm, 'movies')}>
             <Text>Movies</Text>
           </Button>
-          <Button bordered small success onPress={() => this.search(this.state.searchTerm, 'people')}>
+          <Button bordered={() => this.state.searchCategory === 'people'} small onPress={() => this.search(this.state.searchTerm, 'people')}>
             <Text>People</Text>
           </Button>
         </Row>
